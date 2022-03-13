@@ -1,1 +1,0 @@
-login=azor|pass=qwerty
