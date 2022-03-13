@@ -26,6 +26,10 @@ class Calc:
         num8 = Button(self.root, text="8", font=("Time", 20), bg="white", fg="black").place(x=65, y=168, width=68, height=70)
         num9 = Button(self.root, text="9", font=("Time", 20), bg="white", fg="black").place(x=130, y=168, width=68, height=70)
         multiply = Button(self.root, text="×", font=("Terminal", 20), bg="#ff7700", fg="white").place(x=195, y=168, width=68, height=70)
+        num4 = Button(self.root, text="4", font=("Time", 20), bg="white", fg="black").place(x=0, y=235, width=68, height=70)
+        num5 = Button(self.root, text="5", font=("Time", 20), bg="white", fg="black").place(x=65, y=235, width=68, height=70)
+        num6 = Button(self.root, text="6", font=("Time", 20), bg="white", fg="black").place(x=130, y=235, width=68, height=70)
+        minus = Button(self.root, text="-", font=("Time", 20), bg="#ff7700", fg="white").place(x=195, y=235, width=68, height=70)
         self.root.mainloop()
 
 user = Calc()
