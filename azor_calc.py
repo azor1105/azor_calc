@@ -9,7 +9,7 @@ class Calc:
     def __init__(self) -> None:
         #window settings
         self.root = Tk()
-        self.root.geometry("260x450")
+        self.root.geometry("260x440")
         self.root.resizable(0,0)
         self.root.title("Azor_calc")
         self.background = Label(self.root, bg="white").place(x=0,y=0,relwidth=1,relheight=1)
@@ -30,6 +30,13 @@ class Calc:
         num5 = Button(self.root, text="5", font=("Time", 20), bg="white", fg="black").place(x=65, y=235, width=68, height=70)
         num6 = Button(self.root, text="6", font=("Time", 20), bg="white", fg="black").place(x=130, y=235, width=68, height=70)
         minus = Button(self.root, text="-", font=("Time", 20), bg="#ff7700", fg="white").place(x=195, y=235, width=68, height=70)
+        num1 = Button(self.root, text="1", font=("Time", 20), bg="white", fg="black").place(x=0, y=303, width=68, height=70)
+        num2 = Button(self.root, text="2", font=("Time", 20), bg="white", fg="black").place(x=65, y=303, width=68, height=70)
+        num3 = Button(self.root, text="3", font=("Time", 20), bg="white", fg="black").place(x=130, y=303, width=68, height=70)
+        plus = Button(self.root, text="+", font=("Terminal", 20), bg="#ff7700", fg="white").place(x=195, y=303, width=68, height=70)
+        num0 = Button(self.root, text="0", anchor="w",font=("Time", 20), bg="white", fg="black").place(x=0, y=371, width=133, height=70)
+        dot = Button(self.root, text=".", font=("Time", 20), bg="white", fg="black").place(x=130, y=371, width=68, height=70)
+        equal = Button(self.root, text="=", font=("Time", 20), bg="#ff7700", fg="white").place(x=195, y=371, width=68, height=70)
         self.root.mainloop()
 
 user = Calc()
