@@ -56,9 +56,12 @@ class Calc:
 
     #kvadrat
     def kvadrat(self):
-        num = int(self.entry.get())**2
-        self.entry.delete(0, END)
-        self.entry.insert(END, str(num))
+        if self.entry.get().isdigit():
+            num = int(self.entry.get())**2
+            self.entry.delete(0, END)
+            self.entry.insert(END, str(num))
+        else:
+            messagebox.showerror("Error", "Enter only one number for calc and without space")
 
     def koren(self):
         pass
