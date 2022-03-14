@@ -1,9 +1,6 @@
 from tkinter import *
-from tkinter import ttk
 from tkinter import messagebox
-from turtle import width
-from tkinter import font
-import re
+import math
 
 
 class Calc:
@@ -22,7 +19,7 @@ class Calc:
         #buttons
         ac = Button(self.root, text="AC", font=("Terminal", 20), command=self.clear_en, bg="white", fg="black").place(x=0, y=100, width=70, height=70)
         x2 = Button(self.root, text="x²", font=("Terminal", 20), command=self.kvadrat, bg="white", fg="black").place(x=65, y=100, width=70, height=70)
-        koren = Button(self.root, text="√", font=("Terminal", 20), bg="white", fg="black").place(x=130, y=100, width=70, height=70)
+        koren = Button(self.root, text="√", font=("Terminal", 20), command=self.koren, bg="white", fg="black").place(x=130, y=100, width=70, height=70)
         divide = Button(self.root, text="÷", font=("Terminal", 20), command = lambda: self.but_entry('/'), bg="#ff7700", fg="white").place(x=195, y=100, width=70, height=70)
         num7 = Button(self.root, text="7", font=("Time", 20), command = lambda: self.but_entry('7'), bg="white", fg="black").place(x=0, y=168, width=68, height=70)
         num8 = Button(self.root, text="8", font=("Time", 20), command = lambda: self.but_entry('8'), bg="white", fg="black").place(x=65, y=168, width=68, height=70)
@@ -64,6 +61,11 @@ class Calc:
             messagebox.showerror("Error", "Enter only one number for calc and without space")
 
     def koren(self):
-        pass
+        if self.entry.get().isdigit():
+            num = math.sqrt(int(self.entry.get()))
+            self.entry.delete(0, END)
+            self.entry.insert(END, "%.2f" % (num))
+        else:
+            messagebox.showerror("Error", "Enter only one number for calc and without space")
 
 user = Calc()
