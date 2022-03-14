@@ -21,7 +21,7 @@ class Calc:
         
         #buttons
         ac = Button(self.root, text="AC", font=("Terminal", 20), command=self.clear_en, bg="white", fg="black").place(x=0, y=100, width=70, height=70)
-        x2 = Button(self.root, text="x²", font=("Terminal", 20), bg="white", fg="black").place(x=65, y=100, width=70, height=70)
+        x2 = Button(self.root, text="x²", font=("Terminal", 20), command=self.kvadrat, bg="white", fg="black").place(x=65, y=100, width=70, height=70)
         koren = Button(self.root, text="√", font=("Terminal", 20), bg="white", fg="black").place(x=130, y=100, width=70, height=70)
         divide = Button(self.root, text="÷", font=("Terminal", 20), command = lambda: self.but_entry('/'), bg="#ff7700", fg="white").place(x=195, y=100, width=70, height=70)
         num7 = Button(self.root, text="7", font=("Time", 20), command = lambda: self.but_entry('7'), bg="white", fg="black").place(x=0, y=168, width=68, height=70)
@@ -56,7 +56,9 @@ class Calc:
 
     #kvadrat
     def kvadrat(self):
-        pass
+        num = int(self.entry.get())**2
+        self.entry.delete(0, END)
+        self.entry.insert(END, str(num))
 
     def koren(self):
         pass
