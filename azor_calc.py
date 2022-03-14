@@ -35,13 +35,9 @@ class Calc:
         plus = Button(self.root, text="+", font=("Terminal", 20), command = lambda: self.but_entry('+'), bg="#ff7700", fg="white").place(x=195, y=303, width=68, height=70)
         num0 = Button(self.root, text="0", command = lambda: self.but_entry('0'), anchor="w",font=("Time", 20), bg="white", fg="black").place(x=0, y=371, width=133, height=70)
         dot = Button(self.root, text=".", font=("Time", 20), command = lambda: self.but_entry('.'), bg="white", fg="black").place(x=130, y=371, width=68, height=70)
-        equal = Button(self.root, text="=", command=self.scanner_entry, font=("Time", 20), bg="#ff7700", fg="white").place(x=195, y=371, width=68, height=70)
+        equal = Button(self.root, text="=", command=self.calc, font=("Time", 20), bg="#ff7700", fg="white").place(x=195, y=371, width=68, height=70)
         self.root.mainloop()
 
-    #scanner of entry
-    def scanner_entry(self):
-        pass
-        
 
     #entry of amount from button
     def but_entry(self, element):
@@ -67,5 +63,14 @@ class Calc:
             self.entry.insert(END, "%.2f" % (num))
         else:
             messagebox.showerror("Error", "Enter only one number for calc and without space")
+
+    def calc(self):
+        input_info = self.entry.get()
+        try:
+            output = str(eval(input_info.strip()))
+        except ZeroDivisionError:
+            messagebox.showerror("Error", "Think, you can not divide any num to 0", parent=self.root)
+        self.entry.delete(0, END)
+        self.entry.insert(END, output)
 
 user = Calc()
