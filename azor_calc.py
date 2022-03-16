@@ -74,3 +74,7 @@ class Calc:
         self.entry.insert(END, output)
 
 user = Calc()
+
+
+
+
